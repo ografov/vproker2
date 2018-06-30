@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon --exec babel-node -- index",
     "test": "mocha --require test/setup.js --compilers js:babel-register --recursive",
-    "lint": "eslint index.js test/*"
+    "lint": "eslint index.js test/*",
+    "migratedb": "babel-node -- src/server/migrate.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +16,9 @@
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "lodash": "^3.5.0",
     "method-override": "^2.3.10",
+    "mongodb": "^1.4.40",
     "mongoose": "^5.1.7",
     "morgan": "^1.9.0"
   },
@@ -34,6 +37,7 @@
     "mocha": "^5.2.0",
     "mockgoose": "^7.3.5",
     "nodemon": "^1.17.5",
+    "sqlite3": "^4.0.1",
     "supertest": "^3.1.0"
   }
 }
