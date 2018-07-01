@@ -23,6 +23,7 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.0.18",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -37,7 +38,6 @@
     "mocha": "^5.2.0",
     "mockgoose": "^7.3.5",
     "nodemon": "^1.17.5",
-    "sqlite3": "^4.0.1",
     "supertest": "^3.1.0"
   }
 }
