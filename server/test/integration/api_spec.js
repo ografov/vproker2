@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 import request from 'supertest'
 
-import app from '../../src/server'
+import app from '../server'
 
 describe('API', () => {
 
