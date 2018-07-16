@@ -1,23 +1,13 @@
-import mongoose from 'mongoose';
+import Sequelize from 'sequelize'
+import sequelize from '../db/sequelize';
 
-const Schema = mongoose.Schema;
+const Order = sequelize.define('order', {
+    id: { type: Sequelize.STRING, primaryKey: true, field: 'ID' },
+    clientName: { type: Sequelize.STRING, field: 'ClientName' },
+    clientPhoneNumber: { type: Sequelize.STRING, field: 'ClientPhoneNumber' }
+}, {
+        tableName: 'Order', 
+        timestamps: false // don't add the timestamp attributes (updatedAt, createdAt)
+    });
 
-const OrderScema = new Schema({
-    /* Client Info */
-    clientName: { type: String, req },
-    clientPhoneNumber: { type: String, req },
-    clientPassport: { type: String, req },
-
-    paidPledge: { type: String, req },
-    startDate: { type: String, req }, 
-    toolID: { type: String, req },
-
-    /* Optional fields */
-    createdBy: { type: String },
-    description: { type: String },
-    endDate: { type: String },
-    payment: { type: String },
-    price: { type: String },
-    contractNumber: { type: String },
-});
-
+export default Order;
