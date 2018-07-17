@@ -1,14 +1,17 @@
-import mongoose from 'mongoose';
+import Sequelize from 'sequelize'
+import sequelize from '../db/sequelize';
 
-const Schema = mongoose.Schema;
+const Tool = sequelize.define('tool', {
+    id: { type: Sequelize.STRING, primaryKey: true, field: 'ID' },
+    name: { type: Sequelize.STRING, field: 'Name' },
+    description: { type: Sequelize.STRING, field: 'Description' },
+    dayPrice: { type: Sequelize.STRING, field: 'DayPrice' },
+    pledge: { type: Sequelize.STRING, field: 'Pledge' },
+    price: { type: Sequelize.STRING, field: 'Price' },
+    workShiftPrice: { type: Sequelize.STRING, field: 'WorkShiftPrice' },
+}, {
+        tableName: 'Tool', 
+        timestamps: false // don't add the timestamp attributes (updatedAt, createdAt)
+    });
 
-const ToolScema = new Schema({
-    name: { type: String, req },
-    pledge: { type: String, req },
-    price: { type: String, req },
-    dayPrice: { type: String, req },
-    workShiftPrice: { type: String, req },
-    
-    /* Optional fields */
-    description: { type: String }
-});
+export default Tool;

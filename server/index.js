@@ -8,8 +8,8 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
 
-import Order from './models/order';
-Order.findAll().then(orders => {
-    orders.map(o => console.log(o.get()))
+import Tool from './models/tool';
+Tool.findAll().then(data => {
+    data.map(o => console.log(o.get()))
 });
 
