@@ -1,20 +1,16 @@
 import express from "express";
 import config from "./config/express";
+import order from "./models/order"
 
 const app = express();
 
 config(app);
 
 app.get("/orders", (req, res) => {
-  res.send([
-    {
-      id: 1,
-      clientName: "Client name",
-      clientPhoneNumber: "Client phone number",
-      clientPassport: "Client pasport",
-      paidPledge: "paid pladge"
-    }
-  ]);
+  order.findAll({}).then((orders) => {
+    // res.send(orders.get());
+    res.json(orders.map(o => o.get()))
+  })
 });
 
 export default app;

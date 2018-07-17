@@ -1,7 +1,7 @@
 import app from './server'
 
 const isProduction = process.env.NODE_ENV === 'production'
-const port = isProduction ? process.env.PORT : 3001
+const port = isProduction ? process.env.PORT : 3004
 
 app.listen(port, () => {
   /* eslint-disable no-console */
